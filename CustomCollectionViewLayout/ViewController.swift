@@ -11,18 +11,18 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource{
 
     var collectionView: UICollectionView!
-    var flowLayout: MosaicLayout!
+    var flowLayout: OCTGalleryLayout_v1!
 
     var images: [UIImage] = [UIImage]()
 
     var imageModelController: ImageModelController = ImageModelController()
 
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let activityIndicator = UIActivityIndicatorView(style: .gray)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        flowLayout = MosaicLayout()
+        flowLayout = OCTGalleryLayout_v1()
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.alwaysBounceVertical = true
@@ -38,7 +38,7 @@ class ViewController: UIViewController, UICollectionViewDataSource{
 
         activityIndicator.startAnimating()
 
-        downloadImages(limit: 50)
+        downloadImages(limit: 52)
 
     }
 
@@ -77,6 +77,7 @@ class ViewController: UIViewController, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ColorCell.self), for: indexPath) as! ColorCell
         cell.thumbnailImageView.image = images[indexPath.item]
