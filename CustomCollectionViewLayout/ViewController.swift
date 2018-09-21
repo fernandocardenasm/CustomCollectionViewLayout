@@ -22,15 +22,25 @@ class ViewController: UIViewController, UICollectionViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        flowLayout = OCTGalleryLayout_v1()
+        flowLayout = OCTGalleryLayout_v1(numberOfColumns: 3)
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.alwaysBounceVertical = true
         view.addSubview(collectionView)
 
+        //If we need to add the safeAreaLayoutGuide
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+//        collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+//        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+
         collectionView.register(ColorCell.self, forCellWithReuseIdentifier: String(describing: ColorCell.self))
 
         collectionView.dataSource = self
+
+        collectionView.backgroundColor = .white
 
         view.addSubview(activityIndicator)
 
@@ -38,7 +48,7 @@ class ViewController: UIViewController, UICollectionViewDataSource{
 
         activityIndicator.startAnimating()
 
-        downloadImages(limit: 52)
+        downloadImages(limit: 56)
 
     }
 

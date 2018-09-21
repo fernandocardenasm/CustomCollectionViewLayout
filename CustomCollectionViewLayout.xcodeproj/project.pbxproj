@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A42FA1DA21551E3800CBE537 /* OCTMosaicImprovedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42FA1D921551E3800CBE537 /* OCTMosaicImprovedLayout.swift */; };
 		A439E26E2153DF5C0094FB69 /* OCTGalleryLayout_v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439E26D2153DF5C0094FB69 /* OCTGalleryLayout_v2.swift */; };
 		A43D0F88213FEE38009D8223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D0F87213FEE38009D8223 /* AppDelegate.swift */; };
 		A43D0F8A213FEE38009D8223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D0F89213FEE38009D8223 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A42FA1D921551E3800CBE537 /* OCTMosaicImprovedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCTMosaicImprovedLayout.swift; sourceTree = "<group>"; };
 		A439E26D2153DF5C0094FB69 /* OCTGalleryLayout_v2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCTGalleryLayout_v2.swift; sourceTree = "<group>"; };
 		A43D0F84213FEE38009D8223 /* CustomCollectionViewLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCollectionViewLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43D0F87213FEE38009D8223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				A47C0A892153D70D00E95DB3 /* OCTBaseCollectionViewLayout.swift */,
 				A47C0A8B2153D7B100E95DB3 /* OCTGalleryLayout_v1.swift */,
 				A439E26D2153DF5C0094FB69 /* OCTGalleryLayout_v2.swift */,
+				A42FA1D921551E3800CBE537 /* OCTMosaicImprovedLayout.swift */,
 			);
 			path = CustomCollectionViewLayout;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				A4E269602152834900AA3FD1 /* ImageModelController.swift in Sources */,
 				A47C0A8C2153D7B100E95DB3 /* OCTGalleryLayout_v1.swift in Sources */,
 				A439E26E2153DF5C0094FB69 /* OCTGalleryLayout_v2.swift in Sources */,
+				A42FA1DA21551E3800CBE537 /* OCTMosaicImprovedLayout.swift in Sources */,
 				A43D0F8A213FEE38009D8223 /* ViewController.swift in Sources */,
 				A43D0F88213FEE38009D8223 /* AppDelegate.swift in Sources */,
 			);

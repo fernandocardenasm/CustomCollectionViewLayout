@@ -1,8 +1,8 @@
 //
-//  OCTGalleryLayout.swift
+//  MosaicImprovedLayout.swift
 //  CustomCollectionViewLayout
 //
-//  Created by Fernando Cardenas on 20.09.18.
+//  Created by Fernando Cardenas on 21.09.18.
 //  Copyright © 2018 Fernando Cardenas. All rights reserved.
 //
 
@@ -10,13 +10,12 @@ import UIKit
 
 private let kItemHeightAspect: CGFloat  = 2
 
-class OCTGalleryLayout_v1: OCTBaseCollectionViewLayout {
+class OCTMosaicImprovedLayout: OCTBaseCollectionViewLayout {
     private var itemSize = CGSize.zero
     private var columnsXoffset = [CGFloat]()
 
-    init(numberOfColumns: Int = 3) {
+    override init() {
         super.init()
-        self.totalColumns = numberOfColumns
     }
 
     //MARK: Init
@@ -26,7 +25,20 @@ class OCTGalleryLayout_v1: OCTBaseCollectionViewLayout {
 
     //MARK: Override getters
     override var description: String {
-        return "Layout v1"
+        return "Layout v3"
+    }
+
+    override func prepare() {
+        guard let cv = collectionView else { return }
+        let availableWidth = cv.bounds.width - contentInsets.left - contentInsets.right
+
+        let minColumnWidth: CGFloat = 100.0
+        let maxNumColumns = Int(availableWidth / minColumnWidth)
+
+        totalColumns = maxNumColumns
+        
+        super.prepare()
+
     }
 
     //MARK: Override Abstract methods
@@ -69,7 +81,7 @@ class OCTGalleryLayout_v1: OCTBaseCollectionViewLayout {
 
     //MARK: Private methods
     private func isLastItemSingleInRow(_ indexPath: IndexPath) -> Bool {
-        print("Final result \(indexPath.item == (totalItemsInSection - 1) && indexPath.item % totalColumns == 0)")
         return indexPath.item == (totalItemsInSection - 1) && indexPath.item % totalColumns == 0
     }
 }
+
